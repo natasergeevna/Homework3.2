@@ -71,5 +71,38 @@ public class Main {
             default:
                 System.out.println("вы ввели не правильный номер месяца");
         }
+        System.out.println("\n");
+
+        //task 6
+        int age = 19;
+        int salary = 58000;
+        if (age < 23) System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + 2 * salary + " рублей");
+        else if (age >= 23) System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + 3 * salary + " рублей");
+        if (salary >= 80000) System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + 1.5 * salary + " рублей");
+        else if (salary >= 50000) System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + 1.2 * salary + " рублей");
+        System.out.println("\n");
+
+        //task 7
+        int age1 = 25;
+        int salary1 = 60000;
+        int wantedSum = 330000;
+        float bid = 0.1f;
+        int month = 12;
+        double maxPay = 0.5 * salary1;
+        if (age1 < 23) {
+            bid += 0.01;
+            if (maxPay > bid * wantedSum) System.out.println("Максимальный платеж при ЗП " + salary1 + " равен " + maxPay + " рублей. Платеж по кредиту " + bid * wantedSum + " рублей. Одобрено.");
+            else System.out.println("Максимальный платеж при ЗП " + salary1 + " равен " + maxPay + " рублей. Платеж по кредиту " + bid * wantedSum + " рублей. Отказано.");
+        }
+        else if (age1 < 30 && age1 >= 23) {
+            bid += 0.005;
+            if (maxPay > bid * wantedSum) System.out.println("Максимальный платеж при ЗП " + salary1 + " равен " + maxPay + " рублей. Платеж по кредиту " + bid * wantedSum + " рублей. Одобрено.");
+            else System.out.println("Максимальный платеж при ЗП " + salary1 + " равен " + maxPay + " рублей. Платеж по кредиту " + bid * wantedSum + " рублей. Отказано.");
+        }
+        if (salary1 >= 80000) {
+            bid -= 0.007;
+            if (maxPay > bid * wantedSum) System.out.println("Максимальный платеж при ЗП " + salary1 + " равен " + maxPay + " рублей. Платеж по кредиту " + bid * wantedSum + " рублей. Одобрено.");
+            else System.out.println("Максимальный платеж при ЗП " + salary1 + " равен " + maxPay + " рублей. Платеж по кредиту " + bid * wantedSum + " рублей. Отказано.");
+        }
     }
 }
